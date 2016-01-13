@@ -39,7 +39,7 @@ app.use(flash());
 var initPassport = require('./passport/init');
 initPassport(passport);
 
-var routes = require('./routes/index');
+var routes = require('./routes/index')(passport);
 //var users = require('./routes/users'); Not being used
 app.use('/', routes);
 //app.use('/users', users);
