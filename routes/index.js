@@ -20,11 +20,11 @@ module.exports = function(passport){
 	
 	/* Get login page */
 	router.get('/login', function(req,res,next) {
-	  res.render('login', { message: req.flash('message') 
+	  res.render('login', { message: req.flash('message')}); 
 	});
 	
 	/* Handle Login POST */
-	router.post('/login', passport.authenticate('login', {
+	router.post('/loginuser', passport.authenticate('login', {
 		successRedirect: '/home',
 		failureRedirect: '/',
 		failureFlash : true  
