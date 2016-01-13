@@ -1,0 +1,11 @@
+extends layout
+
+block content
+	#user
+		h1.text-center.login-title Welcome #{user.firstName}. Check your details below:
+			iv.signup-wall
+				ul.user-details
+					li Username ---> #{user.username}
+					li Favorite Color ---> #{user.color} 
+					li Favorite Movie ---> #{user.movie}
+			a(href='/signout', class='text-center new-account') Sign Out
