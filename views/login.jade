@@ -1,16 +1,14 @@
 extends layout
 
 block content
-  h1(class="text-center")= title
-  form(class="form-horizontal", id="formLogInUser", name="checkuser", method="post", action="/checkuser")
-    div(class="form-group")
-      label(for="inputUsername", class="col-sm-2 control-label") Username
-      div(class="col-sm-10")
-        input(type="text", class="form-control", id="inputUserName", placeholder="username", name="username")
-    div(class="form-group")
-      label(for="inputPassword", class="col-sm-2 control-label") Password
-      div(class="col-sm-10")
-        input(type="password", class="form-control", id="inputPassword", placeholder="password", name="password")
-    div(class="form-group")
-      div(class="col-sm-offset-2 col-sm-10")
-        button(type="submit", id="btn btn-default") submit
+	h1.text-center.login-title Sign in to our Passport app
+		div.account-wall
+			form(class='form-signin', action='/login', method='POST')
+				input(type='text', name='username' class='form-control', placeholder='Username',required, autofocus)
+				input(type='password', name='password' class='form-control', placeholder='Password', required)
+				button(class='btn btn-lg btn-primary btn-block', type='submit') Sign in
+				span.clearfix
+		a(href='/signup', class='text-center new-account') Create an account
+		#message
+		if message
+			h1.text-center.error-message #{message}
