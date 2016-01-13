@@ -25,7 +25,7 @@ module.exports = function(passport){
 	
 	/* Handle Login POST */
 	router.post('/login', passport.authenticate('login', {
-		successRedirect: '/home',
+		successRedirect: '/profile',
 		failureRedirect: '/',
 		failureFlash : true  
 	}));
